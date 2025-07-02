@@ -4,7 +4,6 @@ function toggleDropdown(event) {
     const dropdownSearchArgument = `[data-dropdown-menu-number="${dropdownNumber}"]`;
     let dropdownMenu = document.querySelector(dropdownSearchArgument);
 
-    console.log(dropdownMenu.classList.contains("dropdown-show"));
     if (dropdownMenu.classList.contains("dropdown-show")) {
         dropdownMenu.classList.remove("dropdown-show");
     }
@@ -15,10 +14,17 @@ function toggleDropdown(event) {
 
 function closeDropdownMenus(event) {
     let cur_element = event.target;
-    if (cur_element.dataset.dropdownMenuNumber == null && cur_element.dataset.dropdownNumber == null) {
-        console.log("HIDE")
+    if (cur_element.dataset.dropdownNumber != null) {
+        let menus = document.querySelectorAll(".dropdown-show");
+        for (let i = 0; i < menus.length; i++) {
+            if (menus[i].dataset.dropdownMenuNumber != cur_element.dataset.dropdownNumber) {
+                menus[i].classList.remove("dropdown-show");
+            }
+        }
+    } else{ if (cur_element.dataset.dropdownMenuNumber == null && cur_element.dataset.dropdownNumber == null) {
         let menus = document.querySelectorAll(".dropdown-show");
         menus.forEach((element) => element.classList.remove("dropdown-show"))
+        }
     }
 };
 
