@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Dropdown example</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #333;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar li {
+            margin: 0;
+        }
+
+        .navbar a {
+            display: block;
+            color: #f2f2f2;
+            text-decoration: none;
+            padding: 14px 20px;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #575757;
+        }
+
+        .example-text {
+            color: black !important;
+        }
+
+        .example-text:hover{
+            background-color: white !important ;
+        }
+
+    </style>
+        <link rel="stylesheet" href="dropdown.css">
+    <script src="dropdown.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+
+            <li>
+                <a href="#" class="dropdown-trigger" data-dropdown-number="2">Products</a>
+                <div class="dropdown-menu" data-dropdown-menu-number="2">
+                    <ul>
+                        <li class="dropdown-item">
+                            <a class="example-text" href="#">Product 1</a>
+                        </li class="dropdown-item">
+                        <li>
+                            <a class="example-text" href="#">Product 2</a>
+                        </li class="dropdown-item">
+                        <li>
+                            <a class="example-text" href="#">Product 3</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+</body>
+
+</html>
